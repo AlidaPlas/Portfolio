@@ -2,7 +2,7 @@
 ---
 title: "Sabrina Carpenter"
 author: "Alida Plas"
-output: github_document
+output:
   flexdashboard::flex_dashboard:
     storyboard: true
 ---
