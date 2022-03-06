@@ -37,3 +37,4 @@ bzt %>%
   labs(x = "Time (s)", y = NULL, fill = "Magnitude") +
   scale_fill_viridis_c() +                              
   theme_classic()
+
