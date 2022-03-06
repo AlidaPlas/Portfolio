@@ -1,3 +1,11 @@
+```{r include = FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(spotifyr)
+library(usethis)
+library(compmus)
+```
+
 ---
 title: "Sabrina Carpenter"
 author: "Alida Plas"
@@ -5,14 +13,6 @@ output:
   flexdashboard::flex_dashboard:
     storyboard: true
 ---
-
-```{r include = FALSE}
-library(tidyverse)
-library(spotifyr)
-library(usethis)
-library(flexdashboard)
-library(compmus)
-```
 
 # Introduction Portfolio
 
