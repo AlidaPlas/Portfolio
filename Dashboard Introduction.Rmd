@@ -14,7 +14,7 @@ library(flexdashboard)
 library(compmus)
 ```
 
-### Introduction Portfolio
+# Introduction Portfolio
 
 PLEASE DO NOT SHOW THIS PORTFOLIO IN CLASS
 The collection of music that I would like to learn more about are the songs of Sabrina Carpenter. I choose this artist, because I have been listening to her music for 7 years now and I am a big fan. I grew up with her, but she also did and her music has changed a lot over time. Sabrina’s first single ‘Can’t Blame a Girl for Trying’ came out in March 2014 when she was 14 years old. She is now 22 and in the mean time she released four albums and many singles. 
@@ -23,4 +23,28 @@ What I would like to find out is how her music has changed over the years. Has a
 A song that is atypical is ‘Skinny Dipping’. It is one of her recent singles, which will be part of her new coming album. In this song she mainly talks and describes an imaginary world. She starts singing in the pre-chorus, but the narrative part is accompanied with an instrumental background. 
 
 ---
+```{r include = FALSE}
+library(datasets)
+```
+
+# Valence over time
+
+```{r}
+EWO <- get_playlist_audio_features("","2PUT9OaUA6eODR3et4CFXB") 
+EVOL <- get_playlist_audio_features("","6wLxOjmHS2ojcXLlgSnfNB")
+SAI <- get_playlist_audio_features("","3bEVrN4e4ZZT3abT0qvLTh")
+SAII <- get_playlist_audio_features("","0ajsJz4w31SYpdGObMUZQ8")
+
+Album <-
+  bind_rows(
+    EWO %>% mutate(category = "EWO"),
+    EVOL %>% mutate(category = "EVOL"),
+    SAI %>% mutate(category = "SAI"),
+    SAII %>% mutate(category = "SAII")
+  )
+
+Album %>%
+  ggplot(aes(x = category, y = valence)) +
+  geom_boxplot()
+```
 
